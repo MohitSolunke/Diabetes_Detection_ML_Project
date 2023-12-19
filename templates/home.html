@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <style>
+    /* CSS Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('https://via.placeholder.com/1920x1080'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #333;
+      font-size: 32px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin-top: 0;
+    }
+
+    input[type='text'] {
+      width: calc(100% - 40px);
+      padding: 14px;
+      margin: 12px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 25px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type='text']:focus {
+      border-color: #007bff;
+    }
+
+    button {
+      width: calc(100% - 40px);
+      padding: 14px;
+      margin: 20px 0;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 25px;
+      background-color: #007bff;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <h1>Diabetes Prediction</h1>
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+      <input type="text" name="Pregnancies" placeholder="Pregnancies" required /><br>
+      <input type="text" name="Glucose" placeholder="Glucose" required /><br>
+      <input type="text" name="BloodPressure" placeholder="BloodPressure" required /><br>
+      <input type="text" name="SkinThickness" placeholder="SkinThickness" required /><br>
+      <input type="text" name="Insulin" placeholder="Insulin" required /><br>
+      <input type="text" name="BMI" placeholder="BMI" required /><br>
+      <input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required /><br>
+      <input type="text" name="Age" placeholder="Age" required /><br>
+      <button type="submit">Predict</button>
+    </form>
+  </div>
+</body>
+</html>
